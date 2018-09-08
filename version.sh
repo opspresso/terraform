@@ -4,7 +4,7 @@ USERNAME=${1}
 REPONAME=${2}
 GITHUB_TOKEN=${3}
 
-NOW=$(cat ./VERSION)
+NOW=$(cat ./VERSION | xargs)
 NEW=$(curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d'"' -f4 | cut -c 2- | xargs)
 
 printf '# %-10s %-10s %-10s\n' "${REPONAME}" "${NOW}" "${NEW}"
