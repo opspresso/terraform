@@ -1,8 +1,7 @@
 #!/bin/bash
 
-USERNAME=${1}
-REPONAME=${2}
-GITHUB_TOKEN=${3}
+USERNAME=${CIRCLE_PROJECT_USERNAME}
+REPONAME=${CIRCLE_PROJECT_REPONAME}
 
 NOW=$(cat ./VERSION | xargs)
 NEW=$(curl -s https://api.github.com/repos/hashicorp/terraform/releases/latest | grep tag_name | cut -d'"' -f4 | cut -c 2- | xargs)
