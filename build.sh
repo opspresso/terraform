@@ -100,10 +100,6 @@ build() {
 
     _get_version
 
-    printf "${NEW}" > ${SHELL_DIR}/target/dist/${REPONAME}
-    _s3_sync "${SHELL_DIR}/target/dist/" "${BUCKET}/latest"
-    _cf_reset "${BUCKET}"
-
     if [ "${NEW}" != "" ] && [ "${NEW}" != "${NOW}" ]; then
         printf "${NEW}" > ${SHELL_DIR}/VERSION
         printf "${NEW}" > ${SHELL_DIR}/target/dist/${REPONAME}
