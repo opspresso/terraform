@@ -66,26 +66,23 @@ workflows:
   version: 2
   apply:
     jobs:
+      - package
+      - publish:
+          requires:
+            - package
+      - release:
+          requires:
+            - package
+      - slack:
+          requires:
+            - release
+  nightly:
+    jobs:
       - build
-  # apply:
-  #   jobs:
-  #     - package
-  #     - publish:
-  #         requires:
-  #           - package
-  #     - release:
-  #         requires:
-  #           - package
-  #     - slack:
-  #         requires:
-  #           - release
-  # nightly:
-  #   jobs:
-  #     - build
-  #   triggers:
-  #     - schedule:
-  #         cron: "0 * * * *"
-  #         filters:
-  #           branches:
-  #             only:
-  #               - master
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - master
