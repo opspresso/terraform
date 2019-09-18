@@ -103,7 +103,7 @@ _s3_sync() {
 
     # aws s3 sync
     _command "aws s3 sync ${SHELL_DIR}/target/publish/ s3://${PUBLISH_PATH}/ --acl public-read"
-    aws s3 sync ${RUN_PATH}/target/publish/ s3://${PUBLISH_PATH}/ --acl public-read
+    aws s3 sync ${SHELL_DIR}/target/publish/ s3://${PUBLISH_PATH}/ --acl public-read
 
     # aws cf reset
     CFID=$(aws cloudfront list-distributions --query "DistributionList.Items[].{Id:Id,Origin:Origins.Items[0].DomainName}[?contains(Origin,'${BUCKET}')] | [0]" | grep 'Id' | cut -d'"' -f4)
