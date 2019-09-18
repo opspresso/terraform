@@ -97,6 +97,8 @@ _s3_sync() {
         return
     fi
 
+    _result "_s3_sync ${REPONAME} ${NEW}"
+
     printf "${NEW}" > ${SHELL_DIR}/target/publish/${REPONAME}
 
     BUCKET="$(echo "${PUBLISH_PATH}" | cut -d'/' -f1)"
@@ -120,6 +122,8 @@ _git_push() {
     if [ "${NEW}" == "" ] || [ "${NEW}" == "${NOW}" ]; then
         return
     fi
+
+    _result "_git_push ${REPONAME} ${NEW}"
 
     printf "${NEW}" > ${SHELL_DIR}/VERSION
 
