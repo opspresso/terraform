@@ -1,7 +1,7 @@
 # terraform
 
-[![GitHub release](https://img.shields.io/github/release/opspresso/terraform.svg)](https://github.com/opspresso/terraform/releases)
-[![CircleCI](https://circleci.com/gh/opspresso/terraform.svg?style=svg)](https://circleci.com/gh/opspresso/terraform)
+[![GitHub Actions status](https://github.com/opspresso/terraform/workflows/Build-Push/badge.svg)](https://github.com/opspresso/terraform/actions)
+[![GitHub Releases](https://img.shields.io/github/release/opspresso/terraform.svg)](https://github.com/opspresso/terraform/releases)
 
 [![DockerHub Badge](http://dockeri.co/image/opspresso/terraform)](https://hub.docker.com/r/opspresso/terraform/)
 
