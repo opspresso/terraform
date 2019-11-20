@@ -74,7 +74,7 @@ _pickup() {
     cat ${THISVERSIONS}
 
     REPOVERSIONS=/tmp/repo-versions
-    curl -s https://api.github.com/repos/${REPOPATH}/releases | grep tag_name | cut -d'"' -f4 | cut -c 2- > ${REPOVERSIONS}
+    curl -s https://api.github.com/repos/${REPOPATH}/releases | grep tag_name | cut -d'"' -f4 | head -5 | cut -c 2- > ${REPOVERSIONS}
 
     _command "repo-versions"
     cat ${REPOVERSIONS}
