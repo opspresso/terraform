@@ -12,11 +12,11 @@ docker pull opspresso/terraform
 ## version
 
 ```
-ENV VERSION 0.13.0-rc1
+ENV VERSION 0.12.29
 ```
 
 ## latest
 
 ```
-ENV LATEST 0.12.28
+ENV LATEST 0.12.29
 ```
