@@ -12,7 +12,7 @@ docker pull opspresso/terraform
 ## version
 
 ```
-ENV VERSION 0.14.0-alpha20201007
+ENV VERSION 0.14.0-beta1
 ```
 
 ## latest
